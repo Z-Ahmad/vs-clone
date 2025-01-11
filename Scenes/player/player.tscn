@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c6sc63wpahtv8"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_f2jg2"]
+[ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_f2jg2"]
 [ext_resource type="Texture2D" uid="uid://b1vbaabiyhgl3" path="res://Sprites/mHero_.png" id="1_x3xn2"]
 [ext_resource type="Texture2D" uid="uid://c7sf6otnpa8pf" path="res://Sprites/fHero_.png" id="3_ah4p2"]
 
@@ -56,7 +56,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,7 +76,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="PlayerBody" type="CharacterBody2D"]
+[node name="PlayerBody" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_f2jg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,4 +87,4 @@ position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_kc67c")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.89408
+frame_progress = 0.742497

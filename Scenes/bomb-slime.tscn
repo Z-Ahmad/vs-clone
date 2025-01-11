@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://boi6li8ku7j6r" path="res://Sprites/bomb-slime.png" id="1_bd0na"]
 [ext_resource type="Script" path="res://Scenes/bomb_slime.gd" id="1_x36ap"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tp5i2"]
-radius = 6.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0s3c"]
 atlas = ExtResource("1_bd0na")
 region = Rect2(0, 32, 16, 16)
@@ -66,9 +63,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h1ulj")
 }],
-"loop": true,
+"loop": false,
 "name": &"explosion",
-"speed": 3.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -126,14 +123,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tp5i2"]
+radius = 6.0
+
 [node name="bomb-slime" type="CharacterBody2D"]
 script = ExtResource("1_x36ap")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_tp5i2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4jms3")
 animation = &"explosion"
 autoplay = "idle"
-frame_progress = 0.491409
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tp5i2")
