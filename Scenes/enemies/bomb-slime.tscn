@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cah1see1hflp4"]
 
 [ext_resource type="Texture2D" uid="uid://boi6li8ku7j6r" path="res://Sprites/bomb-slime.png" id="1_bd0na"]
-[ext_resource type="Script" path="res://Scenes/bomb_slime.gd" id="1_x36ap"]
+[ext_resource type="Script" path="res://Scenes/enemies/bomb_slime.gd" id="1_x36ap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0s3c"]
 atlas = ExtResource("1_bd0na")
@@ -131,7 +131,7 @@ script = ExtResource("1_x36ap")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4jms3")
-animation = &"explosion"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

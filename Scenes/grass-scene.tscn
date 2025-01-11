@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://dl70cbo58d04o"]
+[gd_scene load_steps=12 format=4 uid="uid://dl70cbo58d04o"]
 
 [ext_resource type="Texture2D" uid="uid://t08rh3rchapx" path="res://Sprites/grass.png" id="1_djgw8"]
 [ext_resource type="PackedScene" uid="uid://c6sc63wpahtv8" path="res://Scenes/player/player.tscn" id="2_5q0tj"]
-[ext_resource type="PackedScene" uid="uid://b417a442c6egm" path="res://Scenes/camera_2d.tscn" id="2_vatea"]
-[ext_resource type="PackedScene" uid="uid://qx6qdovwcaqm" path="res://Scenes/slime.tscn" id="3_hi0yi"]
-[ext_resource type="PackedScene" uid="uid://xky4pp1xkytn" path="res://Scenes/long-slime.tscn" id="4_2h8hc"]
-[ext_resource type="PackedScene" uid="uid://cah1see1hflp4" path="res://Scenes/bomb-slime.tscn" id="5_8ito8"]
+[ext_resource type="PackedScene" uid="uid://b417a442c6egm" path="res://Scenes/camera/camera_2d.tscn" id="2_vatea"]
+[ext_resource type="PackedScene" uid="uid://qx6qdovwcaqm" path="res://Scenes/enemies/slime.tscn" id="3_hi0yi"]
+[ext_resource type="PackedScene" uid="uid://xky4pp1xkytn" path="res://Scenes/enemies/long-slime.tscn" id="4_2h8hc"]
+[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/assets/healthbar.tscn" id="4_sqqv4"]
+[ext_resource type="PackedScene" uid="uid://cah1see1hflp4" path="res://Scenes/enemies/bomb-slime.tscn" id="5_8ito8"]
 [ext_resource type="PackedScene" uid="uid://j1huhjnm6yr4" path="res://Scenes/house.tscn" id="6_pnnhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsj06"]
@@ -29,6 +30,9 @@ tile_set = SubResource("TileSet_and2b")
 [node name="Player" parent="." instance=ExtResource("2_5q0tj")]
 position = Vector2(0, 2)
 
+[node name="healthbar2" parent="Player" instance=ExtResource("4_sqqv4")]
+position = Vector2(0, 3)
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -46,5 +50,7 @@ position = Vector2(46, 2)
 [node name="CharacterBody2D3" parent="enemies" instance=ExtResource("4_2h8hc")]
 position = Vector2(-50, 2)
 
-[node name="CharacterBody2D4" parent="enemies" instance=ExtResource("5_8ito8")]
+[node name="Bomb" parent="enemies" instance=ExtResource("5_8ito8")]
 position = Vector2(40, 38)
+collision_layer = 2
+collision_mask = 2
