@@ -9,19 +9,20 @@ var current_health = MAX_HEALTH
 
 func _physics_process(_delta):
 	# Get input directions
-	var directionX = Input.get_axis("ui_left", "ui_right")
-	var directionY = Input.get_axis("ui_up", "ui_down")
+	var direction = Vector2(
+		Input.get_axis("ui_left", "ui_right"),
+		Input.get_axis("ui_up", "ui_down")
+	).normalized()  # Normalize the input vector
 	
-	# Set velocity based on both directions simultaneously
-	velocity.x = directionX * SPEED
-	velocity.y = directionY * SPEED
+	# Set velocity based on normalized direction
+	velocity = direction * SPEED
 	
 	# Update animation based on movement
 	if velocity.length() > 0:
 		animated_sprite.play("run")
 		# Flip sprite based on horizontal movement direction
-		if directionX != 0:
-			animated_sprite.flip_h = directionX < 0
+		if direction.x != 0:
+			animated_sprite.flip_h = direction.x < 0
 	else:
 		animated_sprite.play("idle")
 	
