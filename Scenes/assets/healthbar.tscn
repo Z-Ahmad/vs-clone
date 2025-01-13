@@ -15,17 +15,16 @@ atlas = ExtResource("1_6g6nk")
 region = Rect2(0, 16, 80, 16)
 
 [node name="healthbar" type="Node2D"]
+position = Vector2(-8, 6)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -8.0
-offset_top = 3.0
-offset_right = 72.0
-offset_bottom = 19.0
+offset_right = 80.0
+offset_bottom = 16.0
 scale = Vector2(0.2, 0.2)
 value = 100.0
 texture_under = SubResource("AtlasTexture_45mtc")
 texture_over = SubResource("AtlasTexture_1rlcl")
 texture_progress = SubResource("AtlasTexture_j2rjk")
 tint_under = Color(1, 0.229536, 0.174185, 1)
-tint_over = Color(0.349689, 0.349689, 0.349689, 1)
+tint_over = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 0, 1)
