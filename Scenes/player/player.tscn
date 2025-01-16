@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6sc63wpahtv8"]
+[gd_scene load_steps=16 format=3 uid="uid://c6sc63wpahtv8"]
 
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_f2jg2"]
 [ext_resource type="Texture2D" uid="uid://b1vbaabiyhgl3" path="res://Sprites/mHero_.png" id="1_x3xn2"]
 [ext_resource type="Texture2D" uid="uid://c7sf6otnpa8pf" path="res://Sprites/fHero_.png" id="3_ah4p2"]
+[ext_resource type="PackedScene" uid="uid://btvv7wa2mhpo1" path="res://Scenes/assets/ability_manager/ability_manager.tscn" id="4_o2ols"]
+[ext_resource type="PackedScene" uid="uid://hgtfmy07ywnx" path="res://Scenes/abilities/sword_slash/sword_slash_controller/sword_slash_controller.tscn" id="5_b0axx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78651"]
 radius = 6.08276
@@ -80,6 +82,10 @@ animations = [{
 collision_layer = 0
 script = ExtResource("1_f2jg2")
 movement_speed = 80.0
+
+[node name="AbilityManager" parent="." instance=ExtResource("4_o2ols")]
+
+[node name="sword_slash_controller" parent="AbilityManager" instance=ExtResource("5_b0axx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_78651")

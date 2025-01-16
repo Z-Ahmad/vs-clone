@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqmeektj0m6nb"]
+
+[ext_resource type="Texture2D" uid="uid://nic0oxh5x7eo" path="res://Sprites/weapons_.png" id="1_dq3rt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocrjt"]
+atlas = ExtResource("1_dq3rt")
+region = Rect2(1.46802, 1.08682, 9.36954, 21.2695)
+
+[node name="sword_slash" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_ocrjt")
+offset = Vector2(0, -9)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
