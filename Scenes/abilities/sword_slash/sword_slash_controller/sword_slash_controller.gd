@@ -14,5 +14,4 @@ func on_timer_timeout():
 		return
 
 	var sword_instance = sword_ability.instantiate() as Node2D
-	player.get_parent().add_child(sword_instance)
-	sword_instance.global_position = player.global_position
+	player.add_child(sword_instance)
