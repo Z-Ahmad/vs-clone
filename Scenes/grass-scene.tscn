@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b417a442c6egm" path="res://Scenes/camera/camera_2d.tscn" id="2_vatea"]
 [ext_resource type="PackedScene" uid="uid://qx6qdovwcaqm" path="res://Scenes/enemies/slime.tscn" id="3_hi0yi"]
 [ext_resource type="PackedScene" uid="uid://xky4pp1xkytn" path="res://Scenes/enemies/long-slime.tscn" id="4_2h8hc"]
-[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/assets/healthbar.tscn" id="4_sqqv4"]
+[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/assets/healthbar/healthbar.tscn" id="4_sqqv4"]
 [ext_resource type="PackedScene" uid="uid://cah1see1hflp4" path="res://Scenes/enemies/bomb-slime.tscn" id="5_8ito8"]
 [ext_resource type="PackedScene" uid="uid://j1huhjnm6yr4" path="res://Scenes/house.tscn" id="6_pnnhu"]
 
@@ -35,7 +35,7 @@ position = Vector2(0, 2)
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="bomb-slime" parent="enemies" instance=ExtResource("5_8ito8")]
-position = Vector2(109, 44)
+position = Vector2(84, 23)
 
 [node name="long-slime" parent="enemies" instance=ExtResource("4_2h8hc")]
 position = Vector2(-84, 6)

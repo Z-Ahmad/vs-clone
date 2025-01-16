@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
+@export var movement_speed = 150.0
 const MAX_HEALTH = 100.0
 
 var current_health = MAX_HEALTH
@@ -8,14 +8,18 @@ var current_health = MAX_HEALTH
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(_delta):
+	player_movement()
+	
+	
+	
+func player_movement () :
 	# Get input directions
 	var direction = Vector2(
 		Input.get_axis("ui_left", "ui_right"),
 		Input.get_axis("ui_up", "ui_down")
 	).normalized()  # Normalize the input vector
-	
 	# Set velocity based on normalized direction
-	velocity = direction * SPEED
+	velocity = direction * movement_speed
 	
 	# Update animation based on movement
 	if velocity.length() > 0:
