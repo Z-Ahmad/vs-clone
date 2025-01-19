@@ -34,11 +34,11 @@ position = Vector2(0, 2)
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="bomb-slime" parent="enemies" instance=ExtResource("5_8ito8")]
+[node name="bomb-slime" parent="enemies" groups=["enemy"] instance=ExtResource("5_8ito8")]
 position = Vector2(84, 23)
 
-[node name="long-slime" parent="enemies" instance=ExtResource("4_2h8hc")]
+[node name="long-slime" parent="enemies" groups=["enemy"] instance=ExtResource("4_2h8hc")]
 position = Vector2(-84, 6)
 
-[node name="slime" parent="enemies" instance=ExtResource("3_hi0yi")]
+[node name="slime" parent="enemies" groups=["enemy"] instance=ExtResource("3_hi0yi")]
 position = Vector2(61, -33)

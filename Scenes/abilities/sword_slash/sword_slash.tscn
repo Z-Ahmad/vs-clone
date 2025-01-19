@@ -89,7 +89,7 @@ libraries = {
 autoplay = "swing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -1)
+position = Vector2(4.76837e-07, 8.9407e-08)
 scale = Vector2(0.7, 0.7)
 texture = SubResource("AtlasTexture_ocrjt")
 offset = Vector2(3, -9)
