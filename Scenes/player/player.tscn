@@ -86,7 +86,7 @@ movement_speed = 80.0
 [node name="AbilityManager" parent="." instance=ExtResource("4_o2ols")]
 
 [node name="sword_slash_controller" parent="AbilityManager" instance=ExtResource("5_b0axx")]
-max_range = 150.0
+cooldown_time = 1.7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_78651")

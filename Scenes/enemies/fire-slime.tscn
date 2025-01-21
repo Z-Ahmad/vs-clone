@@ -47,7 +47,7 @@ collision_layer = 4
 collision_mask = 5
 
 [node name="Movement" parent="." instance=ExtResource("1_45qu1")]
-movement_speed = 40.0
+movement_speed = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -57,4 +57,4 @@ shape = SubResource("CircleShape2D_h3d8a")
 sprite_frames = SubResource("SpriteFrames_267cl")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.141503
+frame_progress = 0.56814
