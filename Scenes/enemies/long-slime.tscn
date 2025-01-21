@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://xky4pp1xkytn"]
 
 [ext_resource type="Texture2D" uid="uid://clfjf4oadu0hi" path="res://Sprites/longslime.png" id="1_o0pii"]
-[ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/assets/movement/movement.tscn" id="1_wdwfd"]
+[ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="1_wdwfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egrqm"]
 size = Vector2(23, 7)
@@ -43,8 +43,8 @@ animations = [{
 }]
 
 [node name="long-slime" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 5
 
 [node name="Movement" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("1_wdwfd")]
 parent = NodePath("..")

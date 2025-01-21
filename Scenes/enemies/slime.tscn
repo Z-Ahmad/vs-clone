@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://qx6qdovwcaqm"]
 
 [ext_resource type="Texture2D" uid="uid://cukqdxmh3ea75" path="res://Sprites/slime.png" id="1_3wda0"]
-[ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/assets/movement/movement.tscn" id="1_ml43x"]
+[ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="1_ml43x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ry0dk"]
 radius = 6.0
@@ -43,8 +43,8 @@ animations = [{
 }]
 
 [node name="slime" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 5
 
 [node name="Movement" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("1_ml43x")]
 movement_speed = 14.0

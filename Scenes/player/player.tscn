@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_f2jg2"]
 [ext_resource type="Texture2D" uid="uid://b1vbaabiyhgl3" path="res://Sprites/mHero_.png" id="1_x3xn2"]
 [ext_resource type="Texture2D" uid="uid://c7sf6otnpa8pf" path="res://Sprites/fHero_.png" id="3_ah4p2"]
-[ext_resource type="PackedScene" uid="uid://btvv7wa2mhpo1" path="res://Scenes/assets/ability_manager/ability_manager.tscn" id="4_o2ols"]
+[ext_resource type="PackedScene" uid="uid://btvv7wa2mhpo1" path="res://Scenes/gameplay-assets/ability_manager/ability_manager.tscn" id="4_o2ols"]
 [ext_resource type="PackedScene" uid="uid://hgtfmy07ywnx" path="res://Scenes/abilities/sword_slash/sword_slash_controller/sword_slash_controller.tscn" id="5_b0axx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_78651"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://duo60sg8rhj2b"]
 
-[ext_resource type="Script" path="res://Scenes/assets/movement/basic_movement.gd" id="1_svadd"]
+[ext_resource type="Script" path="res://Scenes/gameplay-assets/movement/basic_movement.gd" id="1_svadd"]
 
 [node name="Movement" type="Node2D"]
 script = ExtResource("1_svadd")

@@ -1,36 +1,45 @@
 extends Node2D
 
 
-@export var max_range: float 
 @export var sword_ability: PackedScene
+@export var cooldown_time: float = 2
+
+var can_use_ability: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CooldownTimer.timeout.connect(on_cooldown_timer_timeout)
+	pass
 #	run on_timer_timeout whenever the timer runs out
-	$Timer.timeout.connect(on_timer_timeout)
+	#$Timer.timeout.connect(on_timer_timeout)
 
 
-func on_timer_timeout():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null:
-		return
-		
-	var player_pos = player.global_position
+#func on_timer_timeout():
+func _process(delta):
 	
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	enemies = enemies.filter(func(enemy: Node2D): 
-		return enemy.global_position.distance_squared_to(player_pos) < pow(max_range,2)
-	)
+	if Input.is_action_just_pressed("ui_accept") and can_use_ability:
+		var player = get_tree().get_first_node_in_group("player") as Node2D
+		if player == null:
+			return
+			
+		var player_pos = player.global_position
+		var player_velocity = player.velocity
+			
+		# if space is pressed, spawn sword
+		var children = player.get_children()
+		var sword_instance = sword_ability.instantiate() as Node2D
 	
-	if enemies.size() == 0:
-		return
+# Flip the sword based on movement direction
+		if player_velocity.x < 0:
+			sword_instance.scale.x = -1
+		else:
+			sword_instance.scale.x = 1
+
+		player.add_child(sword_instance)
+	
+		can_use_ability = false
+		$CooldownTimer.start()
 		
-	enemies.sort_custom(func(a: Node2D, b:Node2D):
-		var a_distance = a.global_position.distance_squared_to(player_pos)
-		var b_distance = b.global_position.distance_squared_to(player_pos)
-		return a_distance < b_distance
-	)
-		
-	var sword_instance = sword_ability.instantiate() as Node2D
-	player.get_parent().add_child(sword_instance)
-	sword_instance.global_position = enemies[0].global_position
+func on_cooldown_timer_timeout():
+	print("timeout")
+	can_use_ability = true

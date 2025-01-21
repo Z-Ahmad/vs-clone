@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://fht3t8g48oi8"]
+
+[ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="1_45qu1"]
+[ext_resource type="Texture2D" uid="uid://b5lq5cmry5g1q" path="res://Sprites/fire-slime.png" id="2_q2g8d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3d8a"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvaqd"]
+atlas = ExtResource("2_q2g8d")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_066np"]
+atlas = ExtResource("2_q2g8d")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiank"]
+atlas = ExtResource("2_q2g8d")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q3kv"]
+atlas = ExtResource("2_q2g8d")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_267cl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvaqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_066np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiank")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q3kv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="fire-slime" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 5
+
+[node name="Movement" parent="." instance=ExtResource("1_45qu1")]
+movement_speed = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_h3d8a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_267cl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.141503
