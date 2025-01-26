@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://xky4pp1xkytn"]
+[gd_scene load_steps=11 format=3 uid="uid://xky4pp1xkytn"]
 
 [ext_resource type="Texture2D" uid="uid://clfjf4oadu0hi" path="res://Sprites/longslime.png" id="1_o0pii"]
 [ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="1_wdwfd"]
+[ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/hurtbox.tscn" id="2_2cpjl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_egrqm"]
-size = Vector2(23, 7)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3sgi"]
+size = Vector2(32, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehubm"]
 atlas = ExtResource("1_o0pii")
@@ -42,6 +43,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egrqm"]
+size = Vector2(23, 7)
+
 [node name="long-slime" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 5
@@ -49,12 +53,18 @@ collision_mask = 5
 [node name="Movement" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("1_wdwfd")]
 parent = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 1.5)
-shape = SubResource("RectangleShape2D_egrqm")
+[node name="Hurtbox" parent="." instance=ExtResource("2_2cpjl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_a3sgi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tk58d")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.629363
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_egrqm")

@@ -1,8 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cah1see1hflp4"]
+[gd_scene load_steps=20 format=3 uid="uid://cah1see1hflp4"]
 
 [ext_resource type="Texture2D" uid="uid://boi6li8ku7j6r" path="res://Sprites/bomb-slime.png" id="1_bd0na"]
 [ext_resource type="Script" path="res://Scenes/enemies/bomb_slime.gd" id="1_x36ap"]
 [ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="3_bkv23"]
+[ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/hurtbox.tscn" id="3_f8nvx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wxdu"]
+radius = 11.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0s3c"]
 atlas = ExtResource("1_bd0na")
@@ -135,6 +139,12 @@ normal_speed = 15.0
 
 [node name="Movement" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_bkv23")]
 parent = NodePath("..")
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_f8nvx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_0wxdu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

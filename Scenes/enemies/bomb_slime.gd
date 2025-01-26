@@ -5,7 +5,7 @@ extends CharacterBody2D
 const FUSE_RADIUS = 60.0
 
 @export var normal_speed: float = 10.0
-@export var fuse_speed: float = 35.0
+@export var fuse_speed: float = 67.0
 
 var is_fusing = false
 var is_exploding = false

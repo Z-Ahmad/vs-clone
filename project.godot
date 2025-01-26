@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+warnings/snap/snap_2d_vertices_to_pixel=false
+
 [application]
 
 config/name="VS Clone"
@@ -26,6 +30,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 enemy="group for enemies"
+attack=""
 
 [input]
 
@@ -67,6 +72,7 @@ ui_down={
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Player Attacks"
 
 [rendering]
 

@@ -79,6 +79,7 @@ animations = [{
 }]
 
 [node name="PlayerBody" type="CharacterBody2D" groups=["player"]]
+z_index = 10
 collision_layer = 0
 script = ExtResource("1_f2jg2")
 movement_speed = 80.0
