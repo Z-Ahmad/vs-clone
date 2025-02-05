@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cah1see1hflp4"]
+[gd_scene load_steps=21 format=3 uid="uid://cah1see1hflp4"]
 
 [ext_resource type="Texture2D" uid="uid://boi6li8ku7j6r" path="res://Sprites/bomb-slime.png" id="1_bd0na"]
 [ext_resource type="Script" path="res://Scenes/enemies/bomb_slime.gd" id="1_x36ap"]
 [ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="3_bkv23"]
 [ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/hurtbox.tscn" id="3_f8nvx"]
+[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/gameplay-assets/healthbar/healthbar.tscn" id="3_k7k5e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wxdu"]
 radius = 11.0
@@ -135,10 +136,12 @@ radius = 5.0
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_x36ap")
-normal_speed = 15.0
 
 [node name="Movement" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_bkv23")]
 parent = NodePath("..")
+
+[node name="healthbar" parent="." instance=ExtResource("3_k7k5e")]
+position = Vector2(-8, -20)
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_f8nvx")]
 

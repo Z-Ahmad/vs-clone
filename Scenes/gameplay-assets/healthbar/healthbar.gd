@@ -1,11 +1,14 @@
 extends Node2D
 
+@export var max_health: float = 100.0
+var current_health: float = max_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$TextureProgressBar.max_value = max_health
+	$TextureProgressBar.value = current_health
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func take_damage(damage: float) -> bool:
+	current_health = max(current_health - damage, 0)
+	$TextureProgressBar.value = current_health
+	return current_health <= 0 

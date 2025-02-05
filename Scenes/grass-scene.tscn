@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://dl70cbo58d04o"]
+[gd_scene load_steps=11 format=4 uid="uid://dl70cbo58d04o"]
 
 [ext_resource type="Texture2D" uid="uid://t08rh3rchapx" path="res://Sprites/grass.png" id="1_djgw8"]
 [ext_resource type="PackedScene" uid="uid://c6sc63wpahtv8" path="res://Scenes/player/player.tscn" id="2_5q0tj"]
 [ext_resource type="PackedScene" uid="uid://b417a442c6egm" path="res://Scenes/camera/camera_2d.tscn" id="2_vatea"]
 [ext_resource type="PackedScene" uid="uid://qx6qdovwcaqm" path="res://Scenes/enemies/slime.tscn" id="3_hi0yi"]
-[ext_resource type="PackedScene" uid="uid://xky4pp1xkytn" path="res://Scenes/enemies/long-slime.tscn" id="4_2h8hc"]
-[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/gameplay-assets/healthbar/healthbar.tscn" id="4_sqqv4"]
-[ext_resource type="PackedScene" uid="uid://cah1see1hflp4" path="res://Scenes/enemies/bomb-slime.tscn" id="5_8ito8"]
+[ext_resource type="PackedScene" uid="uid://cah1see1hflp4" path="res://Scenes/enemies/bomb-slime.tscn" id="6_nbafo"]
 [ext_resource type="PackedScene" uid="uid://j1huhjnm6yr4" path="res://Scenes/house.tscn" id="6_pnnhu"]
-[ext_resource type="PackedScene" uid="uid://fht3t8g48oi8" path="res://Scenes/enemies/fire-slime.tscn" id="9_hjumi"]
+[ext_resource type="PackedScene" uid="uid://fht3t8g48oi8" path="res://Scenes/enemies/fire-slime.tscn" id="7_xhs0v"]
+[ext_resource type="PackedScene" uid="uid://xky4pp1xkytn" path="res://Scenes/enemies/long-slime.tscn" id="8_w2757"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsj06"]
 texture = ExtResource("1_djgw8")
@@ -31,18 +30,16 @@ position = Vector2(-57, -59)
 [node name="Player" parent="." instance=ExtResource("2_5q0tj")]
 position = Vector2(0, 2)
 
-[node name="healthbar" parent="Player" instance=ExtResource("4_sqqv4")]
-
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="bomb-slime" parent="enemies" groups=["enemy"] instance=ExtResource("5_8ito8")]
-position = Vector2(84, 23)
-
-[node name="long-slime" parent="enemies" groups=["enemy"] instance=ExtResource("4_2h8hc")]
-position = Vector2(-84, 6)
-
-[node name="slime" parent="enemies" groups=["enemy"] instance=ExtResource("3_hi0yi")]
+[node name="slime" parent="enemies" instance=ExtResource("3_hi0yi")]
 position = Vector2(61, -33)
 
-[node name="fire-slime" parent="enemies" instance=ExtResource("9_hjumi")]
-position = Vector2(29, 50)
+[node name="bomb-slime" parent="enemies" instance=ExtResource("6_nbafo")]
+position = Vector2(80, 22)
+
+[node name="fire-slime" parent="enemies" instance=ExtResource("7_xhs0v")]
+position = Vector2(-82, 52)
+
+[node name="long-slime" parent="enemies" instance=ExtResource("8_w2757")]
+position = Vector2(45, 68)

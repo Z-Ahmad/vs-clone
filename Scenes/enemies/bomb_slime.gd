@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var movement = $Movement
-const FUSE_RADIUS = 60.0
+var FUSE_RADIUS = 60.0
 
 @export var normal_speed: float = 10.0
 @export var fuse_speed: float = 67.0
@@ -37,6 +37,7 @@ func _process(_delta):
 				is_fusing = false
 				animated_sprite.play("explosion")
 				await animated_sprite.animation_finished
+				get_node("healthbar").take_damage(100)
 				queue_free()
 	elif !is_exploding:
 		is_fusing = false

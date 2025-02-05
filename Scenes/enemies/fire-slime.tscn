@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://fht3t8g48oi8"]
+[gd_scene load_steps=12 format=3 uid="uid://fht3t8g48oi8"]
 
 [ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="1_45qu1"]
+[ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/gameplay-assets/healthbar/healthbar.tscn" id="1_f2lw1"]
 [ext_resource type="Texture2D" uid="uid://b5lq5cmry5g1q" path="res://Sprites/fire-slime.png" id="2_q2g8d"]
 [ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/hurtbox.tscn" id="2_y6hgd"]
 
@@ -49,6 +50,9 @@ animations = [{
 [node name="fire-slime" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 5
+
+[node name="healthbar" parent="." instance=ExtResource("1_f2lw1")]
+position = Vector2(-8, -13)
 
 [node name="Movement" parent="." instance=ExtResource("1_45qu1")]
 movement_speed = 30.0

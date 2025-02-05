@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://t1r4iio4c05s"]
+[gd_scene load_steps=6 format=3 uid="uid://t1r4iio4c05s"]
 
 [ext_resource type="Texture2D" uid="uid://xc3ur0hlo35d" path="res://Sprites/HealthBar.png" id="1_6g6nk"]
+[ext_resource type="Script" path="res://Scenes/gameplay-assets/healthbar/healthbar.gd" id="1_eaqqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45mtc"]
 atlas = ExtResource("1_6g6nk")
@@ -16,6 +17,7 @@ region = Rect2(0, 16, 80, 16)
 
 [node name="healthbar" type="Node2D"]
 position = Vector2(-8, 6)
+script = ExtResource("1_eaqqv")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 offset_right = 80.0
