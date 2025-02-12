@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://cah1see1hflp4"]
+[gd_scene load_steps=23 format=3 uid="uid://cah1see1hflp4"]
 
 [ext_resource type="Texture2D" uid="uid://boi6li8ku7j6r" path="res://Sprites/bomb-slime.png" id="1_bd0na"]
 [ext_resource type="Script" path="res://Scenes/enemies/bomb_slime.gd" id="1_x36ap"]
 [ext_resource type="PackedScene" uid="uid://duo60sg8rhj2b" path="res://Scenes/gameplay-assets/movement/movement.tscn" id="3_bkv23"]
-[ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/hurtbox.tscn" id="3_f8nvx"]
+[ext_resource type="PackedScene" uid="uid://cml185uwrgjk1" path="res://Scenes/gameplay-assets/enemy_hurtbox/enemy-hurtbox.tscn" id="3_f8nvx"]
 [ext_resource type="PackedScene" uid="uid://t1r4iio4c05s" path="res://Scenes/gameplay-assets/healthbar/healthbar.tscn" id="3_k7k5e"]
+[ext_resource type="PackedScene" uid="uid://gbifyjmlvbwo" path="res://Scenes/gameplay-assets/enemy_hitbox/enemy-hitbox.tscn" id="6_v1tme"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wxdu"]
 radius = 11.0
@@ -132,6 +133,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tp5i2"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_frqlr"]
+radius = 5.0
+
 [node name="bomb-slime" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 5
@@ -157,5 +161,12 @@ autoplay = "idle"
 frame_progress = 0.121595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_tp5i2")
+
+[node name="EnemyHitbox" parent="." instance=ExtResource("6_v1tme")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyHitbox"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_frqlr")

@@ -9,7 +9,7 @@ func on_area_entered(area: Area2D):
 	if area.get_parent().is_in_group("attack"):
 		var enemy = get_parent()
 		
-		if enemy.get_node("healthbar").take_damage(50):  # 20 damage per hit
+		if enemy.get_node("healthbar").take_damage(50): 
 			var poof = poof_scene.instantiate()
 			enemy.get_tree().current_scene.add_child(poof)
 			poof.global_position = enemy.global_position

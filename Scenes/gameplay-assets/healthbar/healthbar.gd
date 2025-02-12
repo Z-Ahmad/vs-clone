@@ -5,7 +5,6 @@ var current_health: float = max_health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TextureProgressBar.max_value = max_health
 	$TextureProgressBar.value = current_health
 
 func take_damage(damage: float) -> bool:
